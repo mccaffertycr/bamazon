@@ -51,7 +51,7 @@ function orderItem() {
                 updateInv(res[0].product_name, answers.quantity, res[0].price);
             } else {
                 console.log(`sold out! try again later`);    
-                listItems();
+                continueShopping();
             }
         })
     })
@@ -72,8 +72,27 @@ function updateInv(item, quantity, price) {
         ],
         function(err) {
             if (err) throw err;
-            console.log(`You purchased ${quantity} ${item} for $${price}`);
+            console.log(`You purchased ${quantity} ${item} for $${price}\n`);
+            continueShopping();
         }
     );
-    connection.end();
+}
+
+// prompt that allows the user to continue shopping or exit the program
+function continueShopping() {
+    inquirer.prompt([
+        {
+            name: 'continue',
+            type: 'list',
+            message: 'Would you like to continue shopping?',
+            choices: ['yes', 'exit']
+        }
+    ])
+    .then(function(ans) {
+        if (ans.continue === 'yes') {
+            listItems();
+        } else {
+            connection.end();
+        }
+    });
 }
