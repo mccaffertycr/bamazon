@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
-// establish connection upon running them program and run listItems
+// establish connection upon running the program and call listItems
 connection.connect(function(err) {
     if (err) throw err;
     listItems();
@@ -30,7 +30,7 @@ function listItems() {
     });
 }
 
-// prompts the user once the items have been listed
+// prompts the user to buy enter the id and amount of what they want to purchase
 function orderItem() {
     inquirer.prompt([
      {
