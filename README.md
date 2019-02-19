@@ -7,12 +7,12 @@ amazon-like storefront cli app using MySQL
 1. start the program by entering the cmd `node bamazonCustomer.js`
    - upon running the program will display all available items
 
-![run example](https://raw.githubusercontent.com/mccaffertycr/bamazomaster/run.JPG)
+![run example](./run.JPG)
 
 2. once prompted enter the item id and quanitity to place an order
 
-![order](https://raw.githubusercontent.com/mccaffertycr/bamazon/masteorder.JPG)
+![order](order.JPG)
 
 3. after placing an order either make another order or exit the program
 
-![continue](https://raw.githubusercontent.com/mccaffertycr/bamazon/mastecontinue.JPG)
+![continue](continue.JPG)
